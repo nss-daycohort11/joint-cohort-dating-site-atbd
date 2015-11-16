@@ -19,17 +19,29 @@ require.config({
 });
 
 require(
-  ["dependencies"], 
-  function(_$_) {
+  ["dependencies", "firebase", "bootstrap", "authentication"], 
+  function(dependencies, _firebase, bootstrap, auth) {
 
-    /*
-      You can choose to use the REST methods to interact with
-      Firebase, or you can use the Firebase API with event
-      listeners. It's completely up to each team.
+    var ref = new Firebase("https://haphephobia.firebaseio.com");
+    var authData = ref.getAuth();
+    console.log("authData: ", authData);
 
-      If you choose the former, I created two boilerplate modules
-      named `potential-mates.js`, and `add-favorite.js`.
-     */
+    if(authData === null) {
+      ref.authWithOAuthPopup("facebook", function(error, authData) { //1.firebase sends request for request token to github with client id and secret id
+        if (error) {
+          console.log("Login Failed!", error);
+        } else {
+          console.log("Authenticated successfully with payload:", authData);
+          auth.setUid(authData.uid);
+          ref.child('users/' + authData.uid).set(authData);
+          require(["main-logic"], function() {});
+        }
+      });
+    } else {
+      auth.setUid(authData.uid);
+      ref.child('users/' + authData.uid).set(authData);
+      require(["main-logic"], function() {});
+    }
     
   }
 );
