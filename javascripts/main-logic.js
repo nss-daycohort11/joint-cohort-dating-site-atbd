@@ -1,5 +1,5 @@
 requirejs(
-  ["jquery", "lodash", "firebase", "hbs", "bootstrap", "checkForNewUser"], 
+  ["jquery", "lodash", "firebase", "hbs", "bootstrap", "checkForNewUser", "navigation"], 
   function($, _, _firebase, Handlebars, bootstrap, checkForNewUser) {
     
     var ref = new Firebase("https://haphephobia.firebaseio.com");
