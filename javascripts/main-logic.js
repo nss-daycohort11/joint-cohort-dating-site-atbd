@@ -1,9 +1,11 @@
 requirejs(
-  ["jquery", "lodash", "firebase", "hbs", "bootstrap", "checkForNewUser"], 
-  function($, _, _firebase, Handlebars, bootstrap, checkForNewUser) {
+  ["jquery", "lodash", "firebase", "hbs", "bootstrap", "es6!questionaire"], 
+  function($, _, _firebase, Handlebars, bootstrap, questionaire) {
     
     var ref = new Firebase("https://haphephobia.firebaseio.com");
     var auth = ref.getAuth();
+
+    questionaire();
 
     ref.on('value', function(snapshot){
       var data = snapshot.val();
@@ -21,8 +23,6 @@ requirejs(
       }
 
     });
-
-
     
   } // end of require js function
 ); // end of require js scope
