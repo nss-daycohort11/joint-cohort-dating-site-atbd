@@ -11,12 +11,16 @@
 
 
 <body>
-		<div>
+	<div class="container">
+		
+		<div class="row" id="navigation-bar">
 			<ul class="nav nav-pills">
-			  <li role="presentation" class="active"><a href="#">Home</a></li>
-			  <li role="presentation"><a href="#">Profile</a></li>
-			  <li role="presentation"><a href="#">Messages</a></li>
+			  <li role="presentation"><a href="#" id="all-users-link">All Users</a></li>
+			  <li role="presentation"><a href="#" id="matches-link">Matches</a></li>
+			  <li role="presentation"><a href="#" id="profile-link">Profile</a></li>
+			  <li role="presentation"><a href="#" id="log-out-link">Log Out</a></li>
 			</ul>
+
 		</div> 
 		<!-- Large modal -->
 	<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
@@ -98,6 +102,39 @@
         </div>
       </div>
 	  </div>
+
+		</div>
+
+		<div class="row" id="all-users">
+		<!-- populate all users thumbnails here-->
+		</div>
+
+		<div class="row" id="matches">
+			<!-- populate matches here -->
+		</div>
+
+		<div class="row" id="profile">
+			<!-- populate profile here -->
+		</div>
+
+
+
+
+			<!-- Large modal -->
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
+
+		<div></div>
+
+		<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+		  <div class="modal-dialog modal-lg">
+		    <div class="modal-content">
+		      ...
+		    </div>
+		  </div>
+		</div>
+
+		
+
 	</div>
  
   <script data-main="javascripts/dating-site" src="lib/bower_components/requirejs/require.js"></script>
