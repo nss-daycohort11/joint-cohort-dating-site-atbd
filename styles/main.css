@@ -1,8 +1,50 @@
-body {
-  background-image: url("http://www.merriam-webster.com/top-ten-lists/top-10-unusual-phobias-vol-1/top10_phobia_haphephobia.jpg"); }
+/*body {
+  background-image: url(); }*/
 
 h1 {
   text-align: center;
   color: purple; }
 
 /*# sourceMappingURL=main.css.map */
+
+.container { 
+  background: url("http://img14.deviantart.net/7c3a/i/2013/192/d/1/don_t_touch_me__by_deadnlively-d6d11v8.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 600px;
+  width : 100%;
+}
+
+.logo {
+	font-size: 25px;
+	/*font-weight: bolder;*/
+	font: papyrus;
+}
+
+#allUsers {
+	font-size: large;
+	font-weight: bolder;
+
+}
+
+#matches {
+	font-size: large;
+	font-weight: bolder;
+}
+
+#profile {
+	font-size: large;
+	font-weight: bolder;
+}
+
+#logOut {
+	font-size: large;
+	font-weight: bolder;
+}
+
+#nameId {
+	font-size: small;
+	font-weight: bolder;
+}
