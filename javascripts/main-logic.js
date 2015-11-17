@@ -28,7 +28,7 @@ requirejs(
       var allQuizzes = snapshot.val().quizzes;
 
       var totalProfile = _.merge(allQuizzes, allUsers);
-      delete totalProfile[auth.uid]
+      delete totalProfile[auth.uid];
       console.log("totalProfile", totalProfile);
       console.log('auth', auth);
       populatehtml.populateUserPage(auth);
