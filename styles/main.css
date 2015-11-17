@@ -9,3 +9,51 @@ h1 {
   padding: 0; }
 
 /*# sourceMappingURL=main.css.map */
+
+#all-users-link {
+
+}
+
+.container {
+	background: url("http://img14.deviantart.net/7c3a/i/2013/192/d/1/don_t_touch_me__by_deadnlively-d6d11v8.jpg") 
+	no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	height: 900px;
+  	width: 1100px;
+  
+}
+
+.splash {
+	font-weight: bolder;
+	font-style: italic;
+	font-size: x-large;
+}
+
+#all-users-link {
+	font-size: 25px;
+	font-weight: bold;
+
+}
+
+#matches-link {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+#profile-link {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+#edit-profile-link {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+#log-out-link {
+	font-size: 25px;
+	font-weight: bold;
+}
