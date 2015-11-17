@@ -12,7 +12,7 @@ requirejs(
     // populatehtml.populateAllUsers(ref);
 
     findMatches();
-
+    questionaire();
 
 // will most likely have to add this code into the snapshot that comes after this one
     // Listen for when anything changes
