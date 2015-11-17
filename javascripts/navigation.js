@@ -1,5 +1,5 @@
 require(
-  ["jquery", "bootstrap"], function($, bootstrap) { 
+  ["jquery", "bootstrap","populate_modal"], function($, bootstrap,populate_modal) { 
 
   	$("#all-users").hide();
   	$("#matches").hide();
@@ -15,21 +15,28 @@ require(
   		$("#all-users").hide();
   		$("#profile").hide();
   		$("#matches").show();
-
-  		// if ()
-
-  			
   	});
 
   	$("#profile-link").click(function () {
+      $('#myModal').modal('show');
   		$("#all-users").hide();
   		$("#matches").hide();
   		$("#profile").show();
   	});
 
-  	$("#edit-profile-link").click(function () {
-  		$("modalContent").modal('toggle');
+    $("#edit-profile-link").click(function () {;
+      var dummyData = {data: "isGreat"}
+      populate_modal.populateQuestionaireModal(dummyData);
   	});
+
+    $(document).on("click","#view-full-profile",function() {
+      $('#myModal').modal('show');
+      console.log("yo, we clicked");
+      var userInfo = $(this).attr('uid');
+      // var dummyData = {data: "isGreat"};
+      // console.log("userInfo :", userInfo);
+      // populate_modal.populateUserModal(userInfo);  need to get specific info for this user ID
+    });
 
   	$("#log-out-link").click(function () {
   		$("#all-users").hide();
@@ -37,9 +44,4 @@ require(
   		$("#profile").hide();
   		$("#splash").show();
   	});
-
-
-
-
-
 });

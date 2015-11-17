@@ -1,0 +1,24 @@
+{{#each this}}
+  <div class="col-xs-6 col-md-3">
+  	<div class="thumbnail" id="{{@key}}">
+
+	      <img src="{{this.facebook.profileImageURL}}" alt="{{facebook.displayName}}">
+		    <div class="caption">
+		      <h3 class="other-user-name">{{facebook.displayName}}</h3>
+		      <p>Just a little about me: {{bio}}</p>
+		      <p>Birthday: {{bday}}</p>
+		      <p>Look into my eyes: {{eyes}}</p>
+		      <p>Please don't touch my face: {{face}}</p>
+		      <p>Please don't touch my arms or legs: {{limbs}}</p>
+		      <p>Please don't touch any of my lower body: {{lowerBody}}</p>
+		      <p>Do I like eye contact? {{eyeContact}}</p>
+		      <p>Do I have germophobia? {{germophobia}}</p>
+		      <p>Do I have agoraphobia? {{agoraphobia}}</p>
+		 	    <p>Preferred proximity: {{proximity}} feet</p>
+		      <button id="airFive" type="button" uid="{{uid}}" class="btn btn-primary">Air Hi Five</button>
+
+		    </div>
+
+	  </div>
+  </div>
+{{/each}}
