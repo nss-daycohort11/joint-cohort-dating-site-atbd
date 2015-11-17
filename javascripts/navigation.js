@@ -22,6 +22,7 @@ require(
   	});
 
   	$("#profile-link").click(function () {
+      $('#myModal').modal('show');
   		$("#all-users").hide();
   		$("#matches").hide();
   		$("#profile").show();
@@ -37,9 +38,4 @@ require(
   		$("#profile").hide();
   		$("#splash").show();
   	});
-
-
-
-
-
 });
