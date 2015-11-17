@@ -1,6 +1,5 @@
-define(["jquery", "hbs"], function($, handlebars) {
+define(["jquery", "hbs","navigation"], function($, handlebars, navigation) {
   return {
-  	
 // runs the json file through handlebars template which writes it to the results div
 		populateUserModal: function (data) {
 			require(['hbs!../templates/modal_user_view'], function(userPage) {
@@ -8,8 +7,10 @@ define(["jquery", "hbs"], function($, handlebars) {
 			});
 		},
 		populateQuestionaireModal: function (data) {
-			require(['hbs!../templates/other_user_modal'], function(allUsers) {
-				$("#modalContent").html(allUsers(data));
+			require(['hbs!../templates/modal_questionaire'], function(user) {
+				$("#modalContent").html(user(data));
+				console.log($("#modalContent").html(user(data)));
+				console.log("yo homies");
 			});
 		}
   };

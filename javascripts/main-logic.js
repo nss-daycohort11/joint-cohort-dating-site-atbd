@@ -1,6 +1,6 @@
 requirejs(
-  ["jquery", "lodash", "firebase", "hbs", "bootstrap", "es6!questionaire", "navigation",  "populatehtml", "populate_modal"], 
-  function($, _, _firebase, Handlebars, bootstrap, questionaire, navigation, populatehtml, populate_modal) {
+  ["jquery", "lodash", "firebase", "hbs", "bootstrap", "es6!questionaire", "navigation",  "populatehtml", "populate_modal", "edit-profile"], 
+  function($, _, _firebase, Handlebars, bootstrap, questionaire, navigation, populatehtml, populate_modal, editProfile) {
   
     var ref = new Firebase("https://haphephobia.firebaseio.com");
     var auth = ref.getAuth();

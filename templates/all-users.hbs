@@ -1,14 +1,16 @@
 {{#each users}}
   <div class="col-xs-6 col-md-3">
-  	<div class="thumbnail" id="{{@key}}">
-      <img src="{{facebook.profileImageURL}}" alt="{{facebook.displayName}}">
-	    <div class="caption">
-	      <h3 class="other-user-name">{{facebook.displayName}}</h3>
-	      <select name="">
-	      	<option value="">Air High Five</option>
-	      	<option value="">None</option>   	
-	      </select>
-	    </div>
-	  </div>
+  	<a id="view-full-profile" href="#" uid="{{uid}}">
+	  	<div class="thumbnail" id="{{@key}}">
+	      <img src="{{facebook.profileImageURL}}" alt="{{facebook.displayName}}">
+		    <div class="caption">
+		      <h3 class="other-user-name">{{facebook.displayName}}</h3>
+		      <select name="">
+		      	<option value="">Air High Five</option>
+		      	<option value="">None</option>   	
+		      </select>
+		    </div>
+		  </div>
+	  </a>
   </div>
 {{/each}}
