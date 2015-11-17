@@ -38,6 +38,7 @@ export default function(){
     }
     
     console.log("users", users);
+    //returns list of users minus the current user and each user has the compatability score
     return users;
   });
 }

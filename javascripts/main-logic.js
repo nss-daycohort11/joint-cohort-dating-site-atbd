@@ -1,8 +1,9 @@
 requirejs(
   ["jquery", "lodash", "firebase", "hbs", "bootstrap", 
-  "es6!questionaire", "navigation",  "populatehtml", "es6!findMatches","edit-profile"], 
+  "es6!questionaire", "navigation",  "populatehtml", "es6!findMatches",
+  "edit-profile", "es6!add-favorite"], 
   function($, _, _firebase, Handlebars, bootstrap, questionaire, 
-    navigation, populatehtml, findMatches, editProfile) {
+    navigation, populatehtml, findMatches, editProfile, fav) {
 
   
     var ref = new Firebase("https://haphephobia.firebaseio.com");
@@ -11,14 +12,17 @@ requirejs(
     // populatehtml.populateUserPage(auth);
     // populatehtml.populateAllUsers(ref);
 
-    findMatches();
 
+    
+    // Starts clickevent hifive listener
+    fav();
 
 // will most likely have to add this code into the snapshot that comes after this one
     // Listen for when anything changes
     ref.on("value", function(snapshot) {
 
     // Store in a local variable
+      console.log( "findmatches", findMatches());
       var allUsers = snapshot.val().users;
       var allQuizzes = snapshot.val().quizzes;
 
