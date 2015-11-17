@@ -1,7 +1,7 @@
 requirejs(
   ["jquery", "lodash", "firebase", "hbs", "bootstrap", "es6!questionaire", "navigation",  "populatehtml"], 
   function($, _, _firebase, Handlebars, bootstrap, questionaire, navigation, populatehtml) {
-
+  
     var ref = new Firebase("https://haphephobia.firebaseio.com");
     var auth = ref.getAuth();
     console.log("auth", auth);
@@ -12,13 +12,20 @@ requirejs(
 
 // will most likely have to add this code into the snapshot that comes after this one
     // Listen for when anything changes
-    ref.child("users").on("value", function(snapshot) {
+    ref.on("value", function(snapshot) {
 
     // Store in a local variable
-      var allUsers = snapshot.val();
+      var allUsers = snapshot.val().users;
+      var allQuizzes = snapshot.val().quizzes;
+
+      var totalProfile = _.merge(allQuizzes, allUsers);
+
+      console.log("totalProfile", totalProfile);
 
       populatehtml.populateUserPage(auth);
-      populatehtml.populateAllUsers({users:allUsers});
+
+      populatehtml.populateAllUsers({users:totalProfile});
+
       console.log("allUsers", allUsers);
 
     });
