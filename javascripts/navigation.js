@@ -15,6 +15,10 @@ require(
   		$("#all-users").hide();
   		$("#profile").hide();
   		$("#matches").show();
+
+  		// if ()
+
+  			
   	});
 
   	$("#profile-link").click(function () {
