@@ -1,6 +1,8 @@
 requirejs(
-  ["jquery", "lodash", "firebase", "hbs", "bootstrap", "es6!questionaire", "navigation",  "populatehtml"], 
-  function($, _, _firebase, Handlebars, bootstrap, questionaire, navigation, populatehtml) {
+  ["jquery", "lodash", "firebase", "hbs", "bootstrap", 
+  "es6!questionaire", "navigation",  "populatehtml", "es6!findMatches"], 
+  function($, _, _firebase, Handlebars, bootstrap, questionaire, 
+    navigation, populatehtml, findMatches) {
   
     var ref = new Firebase("https://haphephobia.firebaseio.com");
     var auth = ref.getAuth();
@@ -8,6 +10,7 @@ requirejs(
     // populatehtml.populateUserPage(auth);
     // populatehtml.populateAllUsers(ref);
 
+    findMatches();
 
 
 // will most likely have to add this code into the snapshot that comes after this one

@@ -13,9 +13,9 @@ export default function(){
         germophobia = $("input[type='radio'][name='germophobia']:checked").val(),
         agoraphobia = $("input[type='radio'][name='agoraphobia']:checked").val(),
         bday = $("#bday").val(),
-        bio = $("#bio").val();
-
-    let auth = ref.getAuth().uid;
+        bio = $("#bio").val(),
+        auth = ref.getAuth().uid;
+        
     let quiz = {auth, upperBody, lowerBody, face, limbs, proximity, eye, germophobia,agoraphobia,bday, bio};
     console.log("auth", auth);
     console.log("quiz", quiz);
