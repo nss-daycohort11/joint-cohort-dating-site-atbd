@@ -28,9 +28,9 @@ requirejs(
       var allQuizzes = snapshot.val().quizzes;
 
       var totalProfile = _.merge(allQuizzes, allUsers);
-
+      delete totalProfile[auth.uid]
       console.log("totalProfile", totalProfile);
-
+      console.log('auth', auth);
       populatehtml.populateUserPage(auth);
 
       populatehtml.populateAllUsers({users:totalProfile});
@@ -45,6 +45,7 @@ requirejs(
       for(var user in data.users){
         users[users.length] = user;
       }
+
 
       if(_.find(users, 'uid', auth.uid)){
         console.log("user exists");
