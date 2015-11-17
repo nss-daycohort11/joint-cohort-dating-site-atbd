@@ -12,10 +12,11 @@ requirejs(
     // populatehtml.populateUserPage(auth);
     // populatehtml.populateAllUsers(ref);
 
-
-    
     // Starts clickevent hifive listener
     fav();
+    findMatches();
+    questionaire();
+
 
 // will most likely have to add this code into the snapshot that comes after this one
     // Listen for when anything changes
