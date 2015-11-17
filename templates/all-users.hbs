@@ -1,12 +1,10 @@
-	<div class="row">
 {{#each users}}
 	  <div class="col-xs-3 col-sm-3">
 	    <a href="#" class="thumbnail" id="{{@key}}">
 	      <img src="{{facebook.profileImageURL}}" alt="{{facebook.displayName}}">
 		    <div class="caption">
-		      <h3>{{facebook.displayName}}</h3>
+		      <h3 class="other-user-name">{{facebook.displayName}}</h3>
 		    </div>
 	    </a>
 	  </div>
 {{/each}}
-	</div>

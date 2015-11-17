@@ -9,27 +9,19 @@ requirejs(
     // populatehtml.populateAllUsers(ref);
 
 
-    // Listen for when anything changes on the "songs" key
-ref.child("users").on("value", function(snapshot) {
 
-// Store the entire songs key in a local variable
-  var allUsers = snapshot.val();
+// will most likely have to add this code into the snapshot that comes after this one
+    // Listen for when anything changes
+    ref.child("users").on("value", function(snapshot) {
 
-  populatehtml.populateUserPage(auth);
-  populatehtml.populateAllUsers({users:allUsers});
-  console.log("allUsers", allUsers);
+    // Store in a local variable
+      var allUsers = snapshot.val();
 
-// // Bind the allSongsObject to the song list Handlebar template
-// // use {songs:} because handlebars expects an object of songs
-//   writer.handlebarsToDOM({songs:allSongsObject});
+      populatehtml.populateUserPage(auth);
+      populatehtml.populateAllUsers({users:allUsers});
+      console.log("allUsers", allUsers);
 
-// // Bind the unique artists to the artists template
-//   writer.artistDropdown({songs:allSongsObject});
-
-// // Bind the unique albums to the albums template
-//   writer.albumDropdown({songs:allSongsObject});
-
-});
+    });
 
     ref.on('value', function(snapshot){
       var data = snapshot.val();

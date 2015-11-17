@@ -7,4 +7,12 @@ h1 {
   color: purple;
 }
 
+// used in thumbnails for all users
+.other-user-name {
+	text-align: center;
+}
 
+// there is a problem with cuttin off the last thumbnail in a row
+.col-xs-3, .col-sm-3 {
+	padding: 0;
+}
