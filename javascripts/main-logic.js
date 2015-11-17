@@ -5,9 +5,31 @@ requirejs(
     var ref = new Firebase("https://haphephobia.firebaseio.com");
     var auth = ref.getAuth();
     console.log("auth", auth);
-    populatehtml.populateUserPage(auth);
+    // populatehtml.populateUserPage(auth);
+    // populatehtml.populateAllUsers(ref);
 
-    questionaire();
+
+    // Listen for when anything changes on the "songs" key
+ref.child("users").on("value", function(snapshot) {
+
+// Store the entire songs key in a local variable
+  var allUsers = snapshot.val();
+
+  populatehtml.populateUserPage(auth);
+  populatehtml.populateAllUsers({users:allUsers});
+  console.log("allUsers", allUsers);
+
+// // Bind the allSongsObject to the song list Handlebar template
+// // use {songs:} because handlebars expects an object of songs
+//   writer.handlebarsToDOM({songs:allSongsObject});
+
+// // Bind the unique artists to the artists template
+//   writer.artistDropdown({songs:allSongsObject});
+
+// // Bind the unique albums to the albums template
+//   writer.albumDropdown({songs:allSongsObject});
+
+});
 
     ref.on('value', function(snapshot){
       var data = snapshot.val();

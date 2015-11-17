@@ -1,5 +1,9 @@
 require(
-  ["jquery"], function($) { 
+  ["jquery", "bootstrap"], function($, bootstrap) { 
+
+  	$("#all-users").hide();
+  	$("#matches").hide();
+  	$("#profile").show();
 
   	$("#all-users-link").click(function () {
   		$("#matches").hide();
@@ -17,6 +21,10 @@ require(
   		$("#all-users").hide();
   		$("#matches").hide();
   		$("#profile").show();
+  	});
+
+  	$("#edit-profile-link").click(function () {
+  		$("modalContent").modal('toggle');
   	});
 
   	$("#log-out-link").click(function () {

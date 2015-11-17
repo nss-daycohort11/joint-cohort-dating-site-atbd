@@ -1,15 +1,17 @@
-define (["jquery", "hbs"],
-	function($, handlbars){
+define(["jquery", "hbs"], function($, handlebars) {
+  return {
 
-		return {
-			populateUserPage: function (data) {
-				require(['hbs!../templates/mainuser'], function(userPage){
-					$("#profile").html(userPage(data));
-				});
-			}
-		};
+// runs the json file through handlebars template which writes it to the results div
+		populateUserPage: function (data) {
+			require(['hbs!../templates/mainuser'], function(userPage) {
+				$("#profile").html(userPage(data));
+			});
+		},
 
-
-
-
+		populateAllUsers: function (data) {
+			require(['hbs!../templates/all-users'], function(allUsers) {
+				$("#all-users").html(allUsers(data));
+			});
+		}
+  };
 });
