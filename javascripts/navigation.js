@@ -14,6 +14,16 @@ require(
   	$("#matches-link").click(function () {
   		$("#all-users").hide();
   		$("#profile").hide();
+
+
+  		console.log("you have clicked the matches link");
+  		
+
+
+
+
+
+
   		$("#matches").show();
   	});
 
