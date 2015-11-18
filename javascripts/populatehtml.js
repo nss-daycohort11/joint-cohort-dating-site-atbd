@@ -12,6 +12,11 @@ define(["jquery", "hbs"], function($, handlebars) {
 			require(['hbs!../templates/all-users'], function(allUsers) {
 				$("#all-users").html(allUsers(data));
 			});
+		},
+		populateAllMatches: function (data) {
+			require(['hbs!../templates/all-users'], function(allUsers) {
+				$("#matches").html(allUsers(data));
+			});
 		}
   };
 });
