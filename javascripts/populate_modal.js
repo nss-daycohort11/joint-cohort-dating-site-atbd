@@ -4,6 +4,7 @@ define(["jquery", "hbs","navigation"], function($, handlebars, navigation) {
 		populateUserModal: function (data) {
 			require(['hbs!../templates/modal_user_view'], function(userPage) {
 				$("#modalContent").html(userPage(data));
+				console.log("you clicked something that should call populateUserModal");
 			});
 		},
 		populateQuestionaireModal: function (data) {

@@ -1,5 +1,5 @@
 require(
-  ["jquery", "bootstrap","populate_modal"], function($, bootstrap,populate_modal) { 
+  ["jquery", "bootstrap","populate_modal", "other-user-promise"], function($, bootstrap,populate_modal, otherUserPromise) { 
 
   	$("#all-users").hide();
   	$("#matches").hide();
@@ -30,12 +30,18 @@ require(
   	});
 
     $(document).on("click","#view-full-profile",function() {
-      $('#myModal').modal('show');
+      $('#otherUser').modal('show');
       console.log("yo, we clicked");
       var userInfo = $(this).attr('uid');
       // var dummyData = {data: "isGreat"};
-      // console.log("userInfo :", userInfo);
-      // populate_modal.populateUserModal(userInfo);  need to get specific info for this user ID
+      console.log("userInfo :", userInfo);
+      var responses = {};
+
+      otherUserPromise(userInfo).then(function(responses) {
+	      console.log("responses", responses);
+	      populate_modal.populateUserModal({quizzes:responses});  
+      	
+      });
     });
 
   	$("#log-out-link").click(function () {
