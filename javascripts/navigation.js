@@ -18,15 +18,16 @@ require(
   	});
 
   	$("#profile-link").click(function () {
-      $('#myModal').modal('show');
+      // $('#myModal').modal('show');
   		$("#all-users").hide();
   		$("#matches").hide();
   		$("#profile").show();
   	});
 
     $("#edit-profile-link").click(function () {
-      var dummyData = {data: "isGreat"};
-      populate_modal.populateQuestionaireModal(dummyData);
+      // var dummyData = {data: "isGreat"};
+      // populate_modal.populateQuestionaireModal(dummyData);
+      $('#myModal').modal('show');
   	});
 
     $(document).on("click","#view-full-profile",function() {
