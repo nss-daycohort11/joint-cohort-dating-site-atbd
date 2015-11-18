@@ -24,8 +24,8 @@ require(
   		$("#profile").show();
   	});
 
-    $("#edit-profile-link").click(function () {;
-      var dummyData = {data: "isGreat"}
+    $("#edit-profile-link").click(function () {
+      var dummyData = {data: "isGreat"};
       populate_modal.populateQuestionaireModal(dummyData);
   	});
 
